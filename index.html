@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasicos para el Alma - Librería de Libros Clásicos y Autoayuda</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">📚</span>
+                <h1>Clasicos para el Alma</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#souvenirs">Souvenirs</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="carrito" id="carrito">
+                <span class="carrito-icon">🛒</span>
+                <span class="carrito-count" id="carritoCount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h2>Los clásicos que nutren tu alma</h2>
+                <p>Descubre nuestra colección de libros clásicos y de autoayuda</p>
+                <a href="#catalogo" class="btn btn-primary">Ver Catálogo</a>
+            </div>
+        </section>
+
+        <section id="categorias" class="categorias">
+            <div class="container">
+                <h2 class="section-title">Categorías</h2>
+                <div class="categorias-grid">
+                    <div class="categoria-card" data-categoria="clasico">
+                        <span class="categoria-icon">📖</span>
+                        <h3>Libros Clásicos</h3>
+                    </div>
+                    <div class="categoria-card" data-categoria="autoayuda">
+                        <span class="categoria-icon">🧘</span>
+                        <h3>Autoayuda</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalogo" class="catalogo">
+            <div class="container">
+                <h2 class="section-title">Catálogo de Libros</h2>
+                <div class="filtros">
+                    <button class="filtro-btn active" data-filtro="todos">Todos</button>
+                    <button class="filtro-btn" data-filtro="clasico">Clásicos</button>
+                    <button class="filtro-btn" data-filtro="autoayuda">Autoayuda</button>
+                </div>
+                <div class="productos-grid" id="productosGrid">
+                    <!-- Los productos se cargan dinámicamente -->
+                </div>
+            </div>
+        </section>
+
+        <section class="ofertas">
+            <div class="container">
+                <h2 class="section-title">Ofertas Especiales</h2>
+                <div class="ofertas-grid" id="ofertasGrid">
+                    <!-- Las ofertas se cargan dinámicamente -->
+                </div>
+            </div>
+        </section>
+
+        <section id="souvenirs" class="souvenirs">
+            <div class="container">
+                <h2 class="section-title">Souvenirs Literarios</h2>
+                <p class="souvenirs-subtitle">Lleva contigo las frases de tus libros favoritos</p>
+                <div class="souvenirs-grid" id="souvenirsGrid">
+                    <!-- Los souvenirs se cargan dinámicamente -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto">
+            <div class="container">
+                <h2 class="section-title">Contacto</h2>
+                <div class="contacto-content">
+                    <div class="contacto-info">
+                        <h3>¿Tienes preguntas?</h3>
+                        <p>Estamos aquí para ayudarte</p>
+                        <ul>
+                        <li>📧 info@clasicosparaalalma.com</li>
+                        <li style="color:#000;">☎ +51 987 654 321</li>
+                        <li>📍 Jr. Los Olivos, Breña, Perú</li>
+                        </ul>
+                    </div>
+                    <form class="contacto-form" id="contactForm">
+                        <input type="text" placeholder="Tu nombre" required>
+                        <input type="email" placeholder="Tu email" required>
+                        <textarea placeholder="Tu mensaje" rows="4" required></textarea>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Clasicos para el Alma</h3>
+                    <p>Tu librería de clásicos y autoayuda</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#catalogo">Catálogo</a></li>
+                        <li><a href="#souvenirs">Souvenirs</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#">📘 Facebook</a>
+                        <a href="#">🐦 Twitter</a>
+                        <a href="#">📷 Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Clasicos para el Alma. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de producto -->
+    <div class="modal" id="modalProducto">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image" id="modalImage"></div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p class="modal-autor" id="modalAutor"></p>
+                    <p class="modal-precio" id="modalPrecio"></p>
+                    <p class="modal-descripcion" id="modalDescripcion"></p>
+                    <button class="btn btn-primary btn-add-cart" id="modalAddCart">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal del carrito -->
+    <div class="modal" id="modalCarrito">
+        <div class="modal-content modal-carrito">
+            <button class="modal-close" id="modalCarritoClose">&times;</button>
+            <h2>Tu Carrito</h2>
+            <div class="carrito-items" id="carritoItems"></div>
+            <div class="carrito-total">
+                <span>Total:</span>
+                <span id="carritoTotal">S/0</span>
+            </div>
+            <button class="btn btn-primary btn-checkout" id="btnCheckout">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
